@@ -11,6 +11,7 @@
     <PackageTags>swagger;open api</PackageTags>
     <PackageReleaseNotes>Designed endpoints instead of middleware.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/yang-er/Swashbuckle.AspNetCore</RepositoryUrl>
+    <PackageVersion>5.1.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
