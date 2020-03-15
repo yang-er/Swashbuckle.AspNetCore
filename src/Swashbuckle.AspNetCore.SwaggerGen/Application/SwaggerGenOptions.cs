@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.Extensions.FileProviders;
+using System;
 using System.Collections.Generic;
 
 namespace Swashbuckle.AspNetCore.SwaggerGen
 {
     public class SwaggerGenOptions
     {
+        public IFileInfo HtmlTemplate { get; set; } = new NotFoundFileInfo("index.html.src");
+
         public SwaggerGeneratorOptions SwaggerGeneratorOptions { get; set; } = new SwaggerGeneratorOptions();
 
         public SchemaGeneratorOptions SchemaGeneratorOptions { get; set; } = new SchemaGeneratorOptions();

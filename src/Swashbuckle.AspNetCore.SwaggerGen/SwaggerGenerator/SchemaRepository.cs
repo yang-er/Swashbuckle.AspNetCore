@@ -13,7 +13,13 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
 
         public OpenApiSchema GetOrAdd(Type type, string schemaId, Func<OpenApiSchema> factoryMethod)
         {
-            if (!_reservedIds.TryGetValue(type, out string reservedId))
+            if (type.IsNested)
+            {
+                if (!_reservedIds.TryGetValue(type, out string reservedId2))
+                    return factoryMethod();
+                schemaId = reservedId2;
+            }
+            else if (!_reservedIds.TryGetValue(type, out string reservedId))
             {
                 // First invocation of the factoryMethod for this type - reserve the provided schemaId first, and then invoke the factory method.
                 // Reserving the id first ensures that the factoryMethod will only be invoked once for a given type, even in recurrsive scenarios.

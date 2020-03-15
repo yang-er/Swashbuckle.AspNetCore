@@ -111,24 +111,25 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
         private static readonly Dictionary<Type, Tuple<string, string>> PrimitiveTypesAndFormats = new Dictionary<Type, Tuple<string, string>>
         {
             [ typeof(bool) ] = Tuple.Create("boolean", (string)null),
-            [ typeof(byte) ] = Tuple.Create("integer", "int32"),
-            [ typeof(sbyte) ] = Tuple.Create("integer", "int32"),
-            [ typeof(short) ] = Tuple.Create("integer", "int32"),
-            [ typeof(ushort) ] = Tuple.Create("integer", "int32"),
-            [ typeof(int) ] = Tuple.Create("integer", "int32"),
-            [ typeof(uint) ] = Tuple.Create("integer", "int32"),
-            [ typeof(long) ] = Tuple.Create("integer", "int64"),
-            [ typeof(ulong) ] = Tuple.Create("integer", "int64"),
-            [ typeof(float) ] = Tuple.Create("number", "float"),
-            [ typeof(double) ] = Tuple.Create("number", "double"),
-            [ typeof(decimal) ] = Tuple.Create("number", "double"),
+            [ typeof(byte) ] = Tuple.Create("integer", (string)null),
+            [ typeof(sbyte) ] = Tuple.Create("integer", (string)null),
+            [ typeof(short) ] = Tuple.Create("integer", (string)null),
+            [ typeof(ushort) ] = Tuple.Create("integer", (string)null),
+            [ typeof(int) ] = Tuple.Create("integer", (string)null),
+            [ typeof(uint) ] = Tuple.Create("integer", (string)null),
+            [ typeof(long) ] = Tuple.Create("integer", (string)null),
+            [ typeof(ulong) ] = Tuple.Create("integer", (string)null),
+            [ typeof(float) ] = Tuple.Create("number", (string)null),
+            [ typeof(double) ] = Tuple.Create("number", (string)null),
+            [ typeof(decimal) ] = Tuple.Create("number", (string)null),
             [ typeof(byte[]) ] = Tuple.Create("string", "byte"),
             [ typeof(string) ] = Tuple.Create("string", (string)null),
             [ typeof(char) ] = Tuple.Create("string", (string)null),
             [ typeof(DateTime) ] = Tuple.Create("string", "date-time"),
             [ typeof(DateTimeOffset) ] = Tuple.Create("string", "date-time"),
             [ typeof(Guid) ] = Tuple.Create("string", "uuid"),
-            [ typeof(Uri) ] = Tuple.Create("string", "uri")
+            [ typeof(Uri) ] = Tuple.Create("string", "uri"),
+            [ typeof(TimeSpan) ] = Tuple.Create("string", "duration")
         };
     }
 }

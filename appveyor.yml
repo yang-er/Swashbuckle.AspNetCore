@@ -1,35 +1,26 @@
-image: Visual Studio 2019
+version: 5.1.{build}
+configuration: Release
+clone_depth: 1
 
 init:
 - git config --global core.autocrlf true
 
 environment:
-  DOTNET_VERSION: 3.0.100
+  DOTNET_VERSION: 3.1.101
 
-build_script:
-- ps: ci\build.ps1 
+build:
+  project: Swashbuckle.AspNetCore.Endpoint.sln
+  publish_nuget: true
+  publish_nuget_symbols: true
+  verbosity: minimal
 
-test_script:
-- ps: ci\test.ps1
-
-artifacts:
-- path: artifacts\*.nupkg
+test: off
 
 deploy:
 - provider: NuGet
-  server: https://www.myget.org/F/domaindrivendev/api/v2
-  on:
-    branch: master
-    appveyor_repo_tag: false
+  server: https://nuget.pkg.github.com/yang-er/index.json
   api_key:
-    secure: 9QrW8KWCDr8G2ufmOX4O7U4yjneFOYY+5h+auICuWYb1YPaKpQBtUVqrRExg8VXR
-  skip_symbols: true
-
-- provider: NuGet
-  server: https://www.nuget.org/api/v2/package
-  on:
-    branch: master
-    appveyor_repo_tag: true
-  api_key:
-    secure: S2MgK7qypxpy/OtArorFwdH1XASpkxeJu4L7JtgiEBVWe9bOUQ0D8huWmf4VGrBZ
+    secure: p0KObstHI0dK5RxeIYaazJ0QqbcF/n/L5nR0aYLXC2viNPTMkCXXwsL/wnVxNZTb
+  username:
+    secure: 8stOv5FQ8rbtCJMYO5frcUIpVh8jl2x7fyaj5h3K9po=
   skip_symbols: true

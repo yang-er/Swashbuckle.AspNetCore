@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\version.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Title>Swashbuckle.AspNetCore.SwaggerEndpoint</Title>
+    <Authors>domaindrivendev;yang-er</Authors>
+    <Description>Swagger in endpoints</Description>
+    <PackageProjectUrl>https://github.com/yang-er/Swashbuckle.AspNetCore</PackageProjectUrl>
+    <Company />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>swagger;open api</PackageTags>
+    <PackageReleaseNotes>Designed endpoints instead of middleware.</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/yang-er/Swashbuckle.AspNetCore</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.OpenApi" Version="1.1.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\Swashbuckle.AspNetCore.SwaggerGen\SchemaGenerator\*.cs">
+      <Link>SchemaGenerator\%(FileName)%(Extension)</Link>
+    </Compile>
+    <Compile Include="..\Swashbuckle.AspNetCore.SwaggerGen\SwaggerGenerator\*.cs">
+      <Link>SwaggerGenerator\%(FileName)%(Extension)</Link>
+    </Compile>
+    <Compile Include="..\Swashbuckle.AspNetCore.SwaggerGen\XmlComments\*.cs">
+      <Link>XmlComments\%(FileName)%(Extension)</Link>
+    </Compile>
+    <Compile Include="..\Swashbuckle.AspNetCore.SwaggerGen\Application\*.cs">
+      <Link>Application\%(FileName)%(Extension)</Link>
+    </Compile>
+    <Compile Include="..\Swashbuckle.AspNetCore.Swagger\ISwaggerProvider.cs">
+      <Link>Swagger\ISwaggerProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Swashbuckle.AspNetCore.Swagger\SwaggerOptions.cs">
+      <Link>Swagger\SwaggerOptions.cs</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>
