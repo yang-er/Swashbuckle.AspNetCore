@@ -73,7 +73,7 @@ namespace Microsoft.AspNetCore.Mvc.ApiExplorer
                         string htmlContent = await textReader.ReadLineAsync();
                         if (htmlContent == null) break;
                         if (htmlContent.Contains("<%TITLE%>"))
-                            htmlContent.Replace("<%TITLE%>", Info.Title);
+                            htmlContent = htmlContent.Replace("<%TITLE%>", Info.Title);
 
                         if (!htmlContent.Contains("<%SPEC%>"))
                         {
