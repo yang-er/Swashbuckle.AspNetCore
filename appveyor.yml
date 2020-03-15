@@ -8,6 +8,9 @@ init:
 environment:
   DOTNET_VERSION: 3.1.101
 
+before_build:
+- cmd: nuget restore
+
 build:
   project: Swashbuckle.AspNetCore.SwaggerEndpoint.sln
   publish_nuget: true
