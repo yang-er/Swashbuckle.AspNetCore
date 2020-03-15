@@ -9,7 +9,7 @@ environment:
   DOTNET_VERSION: 3.1.101
 
 build:
-  project: Swashbuckle.AspNetCore.Endpoint.sln
+  project: Swashbuckle.AspNetCore.SwaggerEndpoint.sln
   publish_nuget: true
   publish_nuget_symbols: true
   verbosity: minimal
